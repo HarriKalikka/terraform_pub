@@ -1,0 +1,38 @@
+# get help
+terraform -help
+
+# Check version
+terraform version
+
+# Init project
+terraform init
+
+# Validate config
+terraform validate
+
+# Format files in same dir
+terraform fmt
+
+# Run plan and show what will be changed
+terraform plan
+
+# create
+terraform apply
+
+# Remove what created
+terraform destroy
+
+# Not ask confirmation to create
+terraform alpply -auto-approve
+
+# Show state file
+terraform state show
+
+# Show list of resources
+terraform state list
+
+# Replace specified resource. Get resource from command state list
+terraform apply -replace <resource>
+
+
+More from https://spacelift.io/blog/terraform-commands-cheat-sheet
