@@ -34,10 +34,25 @@ terraform state list
 # Replace specified resource. Get resource from command state list
 terraform apply -replace <resource>
 
-# Show in variables.tf, terraform.tfvars or inline given variables
-# Example var.host_os. Exit just write exit.
+# Show in variables.tf (default value), terraform.tfvars or inline given variables
+# Example var.host_os show host_os valiable value. Exit just write exit.
 terraform console
 
-#
+# Inline definition from file
+terraform console -var-file=dev.tfvars"
+
+# Inline variables. These inlines work with other commands also.
+terraform console -var="host_os=osx"
+
+# Conditionals test in console. Use it in config files.
+var.host_os == "windows" ? "powershell" : "bash"
+
+# Output defined in outputs.tf file for garher values during running. Example
+output "dev_ip" {
+  value = aws_instance.dev_node.public_ip
+}
+
+# Show output values
+terraform output
 
 More from https://spacelift.io/blog/terraform-commands-cheat-sheet
